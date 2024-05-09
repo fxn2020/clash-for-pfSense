@@ -55,7 +55,7 @@ vi /clash/.env
 ```bash
 vi /clash/conf/config.yaml
 ```
-> 可以使用从支持Clash Meta核心的客户端程序（如：ClashN、Clash Verge等）导出的配置文件。
+> 可以使用从支持Clash Meta核心的客户端程序（如[Clash Verge](https://github.com/Clash-Verge-rev/clash-verge-rev/releases) ）导出的配置文件。
 
 > `allow-lan`参数必须设置为`true`，以允许防火墙的客户端使用代理。
 
