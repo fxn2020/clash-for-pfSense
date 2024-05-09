@@ -99,12 +99,9 @@ Text6="代理服务启动失败！"
 nohup $Server_Dir/bin/clash -d $Conf_Dir &> $Log_Dir/clash.log &
 ReturnStatus=$?
 
-
 # 启动服务
 sh /usr/local/etc/rc.d/clash start
-
 if_success $Text5 $Text6 $ReturnStatus
-
 
 # 输出clash仪表盘地址和安全密钥
 echo -e '\nClash 仪表盘访问地址:'
