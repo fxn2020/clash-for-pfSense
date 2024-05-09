@@ -1,14 +1,13 @@
-# clash-for-OPNsense
-OPNsense上运行的命令行代理工具，在OPNsense 24.1.6上测试成功。
+# clash-for-pfSense
+pfSense上运行的命令行代理工具，在pfSense plus 24.03上测试成功。
+
+本项目也可以在OPNsense上运行。
 
 # 项目来源
 源代码来自：
 https://github.com/junyu33/clash-for-freebsd
 
-订阅转换代码来自：
-https://github.com/tindy2013/subconverter
-
-Clash程序来自：
+clash程序来自：
 https://github.com/MetaCubeX/mihomo/releases
 
 # 使用须知
@@ -28,46 +27,47 @@ https://github.com/MetaCubeX/mihomo/releases
 
 ## 下载项目
 
-以root用户登录OPNsense的shell环境。
+以root用户登录pfSense的shell环境。
 
 1、安装依赖
 ```bash
+pkg install sudo
 pkg install git
 pkg install bash
 pkg add https://pkg.freebsd.org/FreeBSD:13:amd64/latest/All/zsh-5.9_4.pkg
+pkg add https://pkg.freebsd.org/FreeBSD:14:amd64/latest/All/zsh-5.9_4.pkg
+pkg add https://pkg.freebsd.org/FreeBSD:15:amd64/latest/All/zsh-5.9_4.pkg
 ```
-
+> **注意：** `zsh应安装对应防火墙FreeBSD平台系统的版本。
 2、下载本项目
 ```bash
-git clone https://github.com/fxn2020/clash-for-OPNsense.git
+git clone https://github.com/fxn2020/clash-for-pfSense.git
 ```
 3、重命名文件夹
 ```bash
-mv /root/clash-for-OPNsense /root/clash
+mv /root/clash-for-pfSense /root/clash
 ```
-4、添加订阅地址
+4、修改配置文件
 ```bash
-cd clash
+cd /clash/conf
+vi config.yaml
+```
+4、修改变量
+```bash
+cd
 vi .env
 ```
-
-> **注意：** `.env` 文件中的变量 `CLASH_SECRET` 为自定义 Clash Secret，值为空时，脚本将自动生成随机字符串。
+> **注意：** `.env`文件中的变量`CLASH_SECRET`值为空时，脚本将自动生成随机字符串。
 
 ## 启动程序
 
 1、启动脚本
 ```bash
-bash start.sh
+sudo bash start.sh
+```
+将会出现以下运行信息：
 
-正在检测订阅地址...
-Clash订阅地址可访问！   OK  
-
-正在下载Clash配置文件...
-配置文件config.yaml下载成功！   OK  
-
-判断订阅内容是否符合clash配置文件标准:
-订阅内容符合clash标准！
-
+```bash
 添加运行参数...
 clash_enable: YES -> YES
 
@@ -101,7 +101,7 @@ tcp4       0      0 192.168.101.4.3128     *.*                    LISTEN
 
 3、透明代理
 
-OPNsense的透明代理设置，请参阅鐵血男兒的[博客](https://pfchina.org/?p=10526)。
+pfSense透明代理设置，请参阅鐵血男兒的[博客](https://pfchina.org/?p=10626)。
 <br>
 
 ## 控制面板
