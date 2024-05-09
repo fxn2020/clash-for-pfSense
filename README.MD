@@ -47,13 +47,13 @@ mv /root/clash-for-pfSense /root/clash
 ```
 4、修改安全密钥
 ```bash
-vi /clash/.env
+vi /root/clash/.env
 ```
 > `.env`文件中的变量`CLASH_SECRET`值为空时，脚本将自动生成随机字符串。
 
 5、修改配置文件
 ```bash
-vi /clash/conf/config.yaml
+vi /root/clash/conf/config.yaml
 ```
 > 可以使用从支持Clash Meta核心的客户端程序（如[Clash Verge](https://github.com/Clash-Verge-rev/clash-verge-rev/releases) ）导出的配置文件。
 
