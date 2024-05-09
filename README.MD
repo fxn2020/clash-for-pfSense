@@ -24,7 +24,7 @@ https://github.com/MetaCubeX/mihomo/releases
 
 ## 下载项目
 
-以root用户登录pfSense的shell环境。
+使用管理员账号登录pfSense的shell环境。
 
 1、安装依赖
 ```bash
@@ -106,7 +106,7 @@ tcp4       0      0 192.168.101.4.3128     *.*                    LISTEN
 
 3、透明代理
 
-透明代理设置，请参阅鐵血男兒的[博客](https://pfchina.org/?p=10626)。
+透明代理设置，请参阅[在pfSense设置Clash透明代理](https://pfchina.org/?p=10626)。
 
 ## 控制面板
 
