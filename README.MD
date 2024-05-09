@@ -37,7 +37,7 @@ pkg add https://pkg.freebsd.org/FreeBSD:15:amd64/latest/All/zsh-5.9_4.pkg
 ```
 > **注意：** `zsh`应安装对应防火墙FreeBSD平台系统的版本。
 
-2、下载本项目
+2、下载项目
 ```bash
 git clone https://github.com/fxn2020/clash-for-pfSense.git
 ```
