@@ -67,6 +67,7 @@ vi /clash/conf/config.yaml
 
 1、启动脚本
 ```bash
+cd clash
 sudo bash start.sh
 ```
 将会出现以下运行信息：
