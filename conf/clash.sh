@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $clash for OPNsense$
+# $clash for pfSense$
 
 . /etc/rc.subr
 
