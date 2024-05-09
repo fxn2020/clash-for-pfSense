@@ -1,7 +1,7 @@
 # clash-for-pfSense
 pfSense上运行的命令行代理工具，在pfSense plus 24.03上测试成功。
 
-本项目也可以在OPNsense上运行。
+本项目也可以在OPNsense上正常运行。
 
 # 项目来源
 源代码来自：
