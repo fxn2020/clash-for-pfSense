@@ -49,13 +49,53 @@ mv /root/clash-for-pfSense /root/clash
 ```
 4、修改配置文件
 ```bash
-cd /clash/conf
-vi config.yaml
+vi /clash/conf/config.yaml
+```
+config.yaml`可以使用从支持Clash Meta核心的客户端程序（如：ClashN、Clash Verge等）导出的配置文件。
+
+allow-lan参数必须设置为true，以允许防火墙的客户端使用代理。
+
+为了使用Clash面板，需要设置面板访问地址、安全密钥和路径。
+
+DNS监听端口修改为其他端口，避免与防火墙DNS解析器或转发器使用的默认端口53冲突。
+
+可以参考下面的示例：
+```bash
+port: 7890
+allow-lan: true
+mode: rule
+log-level: info
+unified-delay: true
+global-client-fingerprint: chrome
+external-controller: '0.0.0.0:9090'
+secret: 123456
+external-ui: /root/clash/dashboard/public
+dns:
+  enable: true
+  listen: :5353
+  ipv6: true
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  default-nameserver: 
+    - 223.5.5.5
+    - 8.8.8.8
+  nameserver:
+    - https://dns.alidns.com/dns-query
+    - https://doh.pub/dns-query
+  fallback:
+    - https://1.0.0.1/dns-query
+    - tls://dns.google
+  fallback-filter:
+    geoip: true
+    geoip-code: CN
+    ipcidr:
+      - 240.0.0.0/4
+proxies:
+......
 ```
 4、修改变量
 ```bash
-cd
-vi .env
+vi /clash/.env
 ```
 > **注意：** `.env`文件中的变量`CLASH_SECRET`值为空时，脚本将自动生成随机字符串。
 
