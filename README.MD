@@ -38,7 +38,8 @@ pkg add https://pkg.freebsd.org/FreeBSD:13:amd64/latest/All/zsh-5.9_4.pkg
 pkg add https://pkg.freebsd.org/FreeBSD:14:amd64/latest/All/zsh-5.9_4.pkg
 pkg add https://pkg.freebsd.org/FreeBSD:15:amd64/latest/All/zsh-5.9_4.pkg
 ```
-> **注意：** `zsh应安装对应防火墙FreeBSD平台系统的版本。
+> **注意：** `zsh`应安装对应防火墙FreeBSD平台系统的版本。
+
 2、下载本项目
 ```bash
 git clone https://github.com/fxn2020/clash-for-pfSense.git
@@ -51,13 +52,13 @@ mv /root/clash-for-pfSense /root/clash
 ```bash
 vi /clash/conf/config.yaml
 ```
-config.yaml`可以使用从支持Clash Meta核心的客户端程序（如：ClashN、Clash Verge等）导出的配置文件。
+可以使用从支持Clash Meta核心的客户端程序（如：ClashN、Clash Verge等）导出的配置文件。
 
 allow-lan参数必须设置为true，以允许防火墙的客户端使用代理。
 
 为了使用Clash面板，需要设置面板访问地址、安全密钥和路径。
 
-DNS监听端口修改为其他端口，避免与防火墙DNS解析器或转发器使用的默认端口53冲突。
+DNS监听端口修改为其他端口，避免与防火墙DNS解析器或转发器使用的默认端口冲突。
 
 可以参考下面的示例：
 ```bash
@@ -154,7 +155,7 @@ pfSense透明代理设置，请参阅鐵血男兒的[博客](https://pfchina.org
 
 # 常见问题
 
-1、 必须使用 `bash xxx.sh` 运行脚本。
+1、 必须使用 `sudo bash xxx.sh` 运行脚本。
 
 2、 部分用户在UI界面找不到代理节点，是因为机场提供的clash配置文件是经过base64编码的，且配置文件格式不符合clash配置标准所致。
 
