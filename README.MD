@@ -49,19 +49,19 @@ mv /root/clash-for-pfSense /root/clash
 ```bash
 vi /clash/.env
 ```
-> **注意：** `.env`文件中的变量`CLASH_SECRET`值为空时，脚本将自动生成随机字符串。
+> `.env`文件中的变量`CLASH_SECRET`值为空时，脚本将自动生成随机字符串。
 
 5、修改配置文件
 ```bash
 vi /clash/conf/config.yaml
 ```
-> **注意：**可以使用从支持Clash Meta核心的客户端程序（如：ClashN、Clash Verge等）导出的配置文件。
+> 可以使用从支持Clash Meta核心的客户端程序（如：ClashN、Clash Verge等）导出的配置文件。
 
-> **注意：**allow-lan参数必须设置为true，以允许防火墙的客户端使用代理。
+> `allow-lan`参数必须设置为`true`，以允许防火墙的客户端使用代理。
 
-> **注意：**为了使用Clash面板，需要设置面板访问地址、安全密钥和路径。
+> 为了使用Clash面板，需要设置面板访问地址、安全密钥和路径。
 
-> **注意：**DNS监听端口修改为其他端口，避免与防火墙DNS解析器或转发器使用的默认端口冲突。
+> DNS监听端口修改为其他端口，避免与防火墙DNS解析器或转发器使用的默认端口冲突。
 
 ## 启动程序
 
