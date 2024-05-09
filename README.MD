@@ -116,16 +116,4 @@ pfSense透明代理设置，请参阅鐵血男兒的[博客](https://pfchina.org
 
 3、 点击Add，并单击刚刚输入的管理地址，之后便可以通过Web管理界面对clash进行一些配置。
 
-# 常见问题
 
-1、 必须使用 `sudo bash xxx.sh` 运行脚本。
-
-2、 部分用户在UI界面找不到代理节点，是因为机场提供的clash配置文件是经过base64编码的，且配置文件格式不符合clash配置标准所致。
-
-3、 项目集成的订阅转换功能如果无法使用，可以通过自建或者第三方平台对订阅地址进行转换。
-
-# 免费订阅
-```bash
-https://neko-warp.nloli.xyz/neko_warp.yaml
-https://subs.zeabur.app/clash
-```
