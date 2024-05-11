@@ -10,7 +10,7 @@ secret: 123456
 external-ui: /root/clash/dashboard/public
 dns:
   enable: true
-  listen: :5353
+  listen: 5353
   ipv6: true
   enhanced-mode: fake-ip
   fake-ip-range: 198.18.0.1/16
